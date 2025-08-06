@@ -1,7 +1,7 @@
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_community.llms.ollama import Ollama
+from langchain_community.chat_models import ChatOllama
 
 import streamlit as st
 import os
@@ -24,13 +24,13 @@ prompt = ChatPromptTemplate.from_messages(
 )
 
 
-st.title("SQI CUSTOMER CHATBOT", anchor=False)
-input_text = st.text_input("Ask me any question about SQI")
+st.title("OLLAMA2 CHATBOT", anchor=False)
+input_text = st.text_input("Ask me any question")
 
 
 
 # ollama llama2
-llm =  Ollama(model="llama2")
+llm =  ChatOllama(model="llama2")
 output_parser =StrOutputParser()
 chain = prompt|llm|output_parser
 
