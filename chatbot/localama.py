@@ -1,15 +1,13 @@
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+from langchain_community.llms.ollama import Ollama
 
 import streamlit as st
 import os
 from dotenv import load_dotenv
 
-
 load_dotenv()
-# print("OPENAI KEY LOADED:", os.getenv("OPENAI_API_KEY") is not None)
-
 
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
@@ -30,9 +28,9 @@ st.title("SQI CUSTOMER CHATBOT", anchor=False)
 input_text = st.text_input("Ask me any question about SQI")
 
 
- 
-# OpenAI LLM
-llm = ChatOpenAI(model="gpt-3.5-turbo")
+
+# ollama llama2
+llm =  Ollama(model="llama2")
 output_parser =StrOutputParser()
 chain = prompt|llm|output_parser
 
