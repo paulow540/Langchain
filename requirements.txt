@@ -5,4 +5,8 @@ python-dotenv
 langchain-community 
 langchain-ollama
 langchain
+langserve
+fastapi
+uvicorn
+sse_starlette
 
