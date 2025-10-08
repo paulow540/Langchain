@@ -21,7 +21,7 @@ st.title("OLLAMA2 CHATBOT", anchor=False)
 input_text = st.chat_input("Ask me any question")
 
 # LangChain Ollama model
-llm = ChatOllama(model="llama2")
+llm = ChatOllama(model="llama3")
 output_parser = StrOutputParser()
 chain = prompt | llm | output_parser
 

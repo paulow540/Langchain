@@ -19,5 +19,6 @@ cassio
 beautifulsoup4
 langchain-groq
 wikipedia
+jupyterlab
 
 
